@@ -1,16 +1,22 @@
-# rebuilding_flutter
+# 🏗️ 리빌딩 (Rebuilding)
 
-A new Flutter project.
+야구단을 너만의 방식으로 재건축하라!  
+KBO 팀 중 하나를 선택하고, 나만의 시뮬레이션 팀을 운영해보세요.  
+Flutter로 만든 **야구 리빌딩 시뮬레이션 앱**입니다.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 기능 소개
 
-A few resources to get you started if this is your first Flutter project:
+- ⚾ **KBO 10개 구단 지원**
+- 🧑‍💻 회원가입 / 로그인 UI
+- 🧠 사용자의 입력 기반 팀 리빌딩
+- 📊 선수 능력치는 실제 2024년 성적 기반 계산
+- 📱 Firebase 연동 (예정)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🛠️ 기술 스택
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Flutter 3.x**
+- **Firebase (Auth, Firestore)** – 예정
+- **Dart**
+- **GitHub Actions** (CI/CD 적용 예정)
