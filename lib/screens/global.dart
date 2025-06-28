@@ -1,0 +1,2 @@
+String? registeredId;
+String? registeredPassword;

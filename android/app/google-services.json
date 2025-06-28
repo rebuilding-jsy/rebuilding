@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "93211325712",
+    "project_id": "rebuilding-e670a",
+    "storage_bucket": "rebuilding-e670a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93211325712:android:97de9544281c76c71ba195",
+        "android_client_info": {
+          "package_name": "com.example.rebuilding_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-sZpHxa12PNZ9PrRE6LgDhsRXnpUiU70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
