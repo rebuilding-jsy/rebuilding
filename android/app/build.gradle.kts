@@ -8,8 +8,8 @@ plugins {
 
 android {
     namespace = "com.example.rebuilding_flutter"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = 34
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -22,10 +22,10 @@ android {
 
     defaultConfig {
         applicationId = "com.example.rebuilding_flutter"
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        minSdk = 23
+        targetSdk = 34
+        versionCode =1
+        versionName = "1.0"
     }
 
     buildTypes {

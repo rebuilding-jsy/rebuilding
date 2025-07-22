@@ -2,8 +2,7 @@ import org.gradle.api.tasks.Delete
 import org.gradle.api.file.Directory
 
 plugins {
-    // ✅ Firebase Google Services 플러그인 선언 (apply false)
-    id("com.google.gms.google-services") version "4.4.3" apply false
+    id("com.google.gms.google-services") version "4.3.15" apply false
 }
 
 // ✅ 저장소 설정
