@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   final String username; // 로그인된 사용자명
   const MainScreen({super.key, required this.username});
 
   @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  final List<Map<String, String>> teams = [
+    {'name': 'LG 트윈스', 'logo': 'assets/lg.png'},
+    {'name': 'KT 위즈', 'logo': 'assets/kt.png'},
+    {'name': 'SSG 랜더스', 'logo': 'assets/ssg.png'},
+    {'name': 'NC 다이노스', 'logo': 'assets/nc.png'},
+    {'name': 'KIA 타이거즈', 'logo': 'assets/kia.png'},
+    {'name': '롯데 자이언츠', 'logo': 'assets/lotte.png'},
+    {'name': '두산 베어스', 'logo': 'assets/doosan.png'},
+    {'name': '삼성 라이온즈', 'logo': 'assets/samsung.png'},
+    {'name': '한화 이글스', 'logo': 'assets/hanwha.png'},
+    {'name': '키움 히어로즈', 'logo': 'assets/kiwoom.png'},
+  ];
+
+  String? selectedTeam;
+  final ownerNameController = TextEditingController();
+  final teamNameController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
-    final List<Map<String, String>> teams = [
-      {'name': 'LG 트윈스', 'logo': 'assets/lg.png'},
-      {'name': 'KT 위즈', 'logo': 'assets/kt.png'},
-      {'name': 'SSG 랜더스', 'logo': 'assets/ssg.png'},
-      {'name': 'NC 다이노스', 'logo': 'assets/nc.png'},
-      {'name': 'KIA 타이거즈', 'logo': 'assets/kia.png'},
-      {'name': '롯데 자이언츠', 'logo': 'assets/lotte.png'},
-      {'name': '두산 베어스', 'logo': 'assets/doosan.png'},
-      {'name': '삼성 라이온즈', 'logo': 'assets/samsung.png'},
-      {'name': '한화 이글스', 'logo': 'assets/hanwha.png'},
-      {'name': '키움 히어로즈', 'logo': 'assets/kiwoom.png'},
-    ];
-
-    String? selectedTeam;
-    final ownerNameController = TextEditingController();
-    final teamNameController = TextEditingController();
-
     return Scaffold(
       backgroundColor: const Color(0xFF009EE2),
       body: SafeArea(
@@ -45,7 +50,7 @@ class MainScreen extends StatelessWidget {
                 children: [
                   const SizedBox(height: 70),
                   Text(
-                    '환영합니다, $username 님!',
+                    '환영합니다, ${widget.username} 님!',
                     style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
@@ -91,7 +96,9 @@ class MainScreen extends StatelessWidget {
                       );
                     }).toList(),
                     onChanged: (value) {
-                      selectedTeam = value;
+                      setState(() {
+                        selectedTeam = value;
+                      });
                     },
                   ),
                   const SizedBox(height: 16),
@@ -121,7 +128,11 @@ class MainScreen extends StatelessWidget {
                         );
                         return;
                       }
-                      // TODO: 다음 화면으로 이동 or 저장 로직
+
+                      // TODO: 다음 페이지로 이동 또는 저장 처리
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text('${selectedTeam!} 선택 완료!')),
+                      );
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,

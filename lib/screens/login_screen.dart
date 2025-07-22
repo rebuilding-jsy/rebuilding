@@ -12,21 +12,19 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController idController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-
-  String _makeEmail(String id) => '$id@rebuilding.app';
 
   void _login() async {
     try {
       final userCredential = await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _makeEmail(idController.text.trim()),
-        password: passwordController.text,
+        email: emailController.text.trim(),
+        password: passwordController.text.trim(),
       );
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (_) => MainScreen(username: idController.text)),
+        MaterialPageRoute(builder: (_) => MainScreen(username: emailController.text)),
       );
     } on FirebaseAuthException catch (e) {
       String message = '로그인 실패';
@@ -45,7 +43,10 @@ class _LoginScreenState extends State<LoginScreen> {
       builder: (_) => AlertDialog(
         content: Text(msg),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(context), child: const Text('확인')),
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('확인'),
+          ),
         ],
       ),
     );
@@ -76,9 +77,9 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 30),
               TextField(
-                controller: idController,
+                controller: emailController,
                 decoration: const InputDecoration(
-                  hintText: '아이디',
+                  hintText: '이메일',
                   filled: true,
                   fillColor: Colors.white,
                 ),
